@@ -77,8 +77,63 @@ const Workspace = () => {
         </div>
       </header>
       <main>
-        <div>
-          <h2 className="text-center sm:text-left">Tasks</h2>
+        <div className="bg-slate-200 m-2 py-2 rounded-xl">
+          <div className="mx-4 my-4">
+            <h2 className="text-4xl font-bold">Hello, User.</h2>
+            <h3 className="text-xl text-slate-500">You have n tasks today</h3>
+          </div>
+          <div className="grid grid-cols-2">
+            <div className="p-4 mx-4 my-2 border rounded-2xl">
+              <span>Total: 0</span>
+            </div>
+            <div className="p-4 mx-4 my-2 border rounded-2xl">
+              <span>Pending: 0</span>
+            </div>
+            <div className="p-4 mx-4 my-2 border rounded-2xl">
+              <span>Completed: 0</span>
+            </div>
+            <div className="p-4 mx-4 my-2 border rounded-2xl">
+              <span>Overdue: 0</span>
+            </div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-col">
+          <div className="mx-4 my-4">
+            <h2 className="text-2xl font-bold">Today's Tasks</h2>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="p-4 mx-4 my-2 border border-slate-200 rounded-2xl shadow-md">
+              <h3 className="text-xl">Task 1</h3>
+              <div>
+                <div className="my-4 flex gap-3 items-center">
+                  <span className="p-2 bg-blue-300 rounded-full">
+                    In Progress
+                  </span>
+                  <span>Low</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 mx-4 my-2 border border-slate-200 rounded-2xl shadow-md">
+              <h3 className="text-xl">Task 2</h3>
+              <div>
+                <div className="my-4 flex gap-3 items-center">
+                  <span className="p-2 bg-orange-300 rounded-full">To Do</span>
+                  <span>Medium</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 mx-4 my-2 border border-slate-200 rounded-2xl shadow-md">
+              <h3 className="text-xl">Task 3</h3>
+              <div>
+                <div className="my-4 flex gap-3 items-center">
+                  <span className="p-2 bg-green-500 text-white rounded-full">
+                    In Progress
+                  </span>
+                  <span>High</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <footer>
