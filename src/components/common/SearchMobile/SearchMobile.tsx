@@ -19,7 +19,7 @@ export const SearchMobile = ({
 
       {/* Search Mobile */}
       <div
-        className={`fixed z-30 top-0 left-0 w-full h-16 bg-[#F8FAFC] text-black shadow transform transition-transform duration-300 
+        className={`fixed z-30 top-0 left-0 w-full h-18 bg-[#F8FAFC] text-black shadow transform transition-transform duration-300 
             ${isOpen ? "translate-y-0" : "-translate-y-full"} `}
       >
         <div className="flex justify-center items-center w-full h-full">
