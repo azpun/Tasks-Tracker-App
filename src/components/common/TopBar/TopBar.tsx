@@ -1,7 +1,14 @@
+import { useLocation } from "react-router-dom";
 import Button from "../../ui/Button/Button";
 import Input from "../../ui/Input";
 
-export const TopBar = ({ onMenuClick }: { onMenuClick: () => void }) => {
+interface TopBarProps {
+  onMenuClick: () => void;
+  onSearchClick: () => void;
+}
+
+export const TopBar = ({ onMenuClick, onSearchClick }: TopBarProps) => {
+  const location = useLocation();
   return (
     <header className="md:sticky md:top-0 md:z-10">
       <div className="flex justify-between items-center bg-white p-3 ">
@@ -18,13 +25,31 @@ export const TopBar = ({ onMenuClick }: { onMenuClick: () => void }) => {
 
         {/* Search and User */}
         <div className="flex items-center gap-3">
-          <Input
-            type="search"
-            placeholder="Search"
-            name="search"
-            required
-            iconSource="/ui/search.svg"
-          />
+          {location.pathname === "/tasks" && (
+            <>
+              {/* Search Input Desktop */}
+              <Input
+                type="search"
+                placeholder="Search"
+                name="search"
+                required
+                iconSource="/ui/search.svg"
+              />
+              {/* Search Button Mobile */}
+              <div className="block md:hidden">
+                <Button className="w-8 h-8">
+                  <img
+                    src="/ui/search.svg"
+                    alt="search"
+                    onClick={onSearchClick}
+                  />
+                </Button>
+              </div>
+            </>
+          )}
+
+          {/* Search Mobile */}
+
           <div className="w-12 h-12">
             <a href="#">
               <img src="/ui/user.svg" alt="user" />

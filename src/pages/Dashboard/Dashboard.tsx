@@ -61,22 +61,6 @@ const Dashboard = () => {
         </div>
       </div>
     </MainLayout>
-    // <>
-    //   <div className="flex bg-[#F8FAFC]">
-    //     {/* Sidebar */}
-    //     <Sidebar isOpen={isBurgerOpen} setIsOpen={setIsBurgerOpen} />
-
-    //     <div className="flex flex-1 flex-col">
-    //       {/* Top Bar */}
-    //       <TopBar onMenuClick={() => setIsBurgerOpen(!isBurgerOpen)} />
-
-    //       <main className="flex flex-col">
-
-    //       </main>
-    //       <footer></footer>
-    //     </div>
-    //   </div>
-    // </>
   );
 };
 
