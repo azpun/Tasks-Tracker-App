@@ -1,4 +1,6 @@
+import { useLocation } from "react-router-dom";
 import Button from "../../ui/Button/Button";
+import NavItem from "../NavItem";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -6,6 +8,13 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
+  const location = useLocation();
+
+  const menuItems = [
+    { href: "/", icon: "/ui/dashboard.svg", label: "Dashboard" },
+    { href: "/tasks", icon: "/ui/tasks.svg", label: "Tasks" },
+    { href: "/profile", icon: "/ui/user-nav.svg", label: "Profile" },
+  ];
   return (
     <>
       {/* Overlay */}
@@ -40,26 +49,16 @@ export const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
         <div className="flex flex-col justify-between px-6 ">
           <nav className="mt-10 md:mt-10">
             <ul className="flex flex-col gap-4">
-              <li className="flex items-center gap-3">
-                <img
-                  src="/ui/dashboard.svg"
-                  alt="dashboard"
-                  className="w-6 h-6"
-                />
-                <a href="#Dashboard">Dashboard</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <img src="/ui/tasks.svg" alt="tasks" className="w-6 h-6" />
-                <a href="#Task">Tasks</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <img
-                  src="/ui/user-nav.svg"
-                  alt="user-nav"
-                  className="w-6 h-6"
-                />
-                <a href="#Profile">Profile</a>
-              </li>
+              {menuItems.map((item) => (
+                <NavItem
+                  key={item.href}
+                  iconSource={item.icon}
+                  href={item.href}
+                  isActive={location.pathname === item.href}
+                >
+                  {item.label}
+                </NavItem>
+              ))}
             </ul>
           </nav>
         </div>

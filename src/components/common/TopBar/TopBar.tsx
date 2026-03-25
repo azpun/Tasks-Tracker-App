@@ -1,7 +1,7 @@
 import Button from "../../ui/Button/Button";
 import Input from "../../ui/Input";
 
-export const Navbar = ({ onMenuClick }: { onMenuClick: () => void }) => {
+export const TopBar = ({ onMenuClick }: { onMenuClick: () => void }) => {
   return (
     <header className="md:sticky md:top-0 md:z-10">
       <div className="flex justify-between items-center bg-white p-3 ">
