@@ -26,3 +26,16 @@ export const bgPriorityColor: { [key: string]: string } = {
   medium: "bg-amber-200",
   high: "bg-red-200",
 };
+
+export const borderStatusColor: { [key: string]: string } = {
+  "to do": "border-l-blue-500",
+  "in progress": "border-l-amber-500",
+  done: "border-l-green-500",
+  overdue: "border-l-red-500",
+};
+
+export const dotPriorityColor: { [key: string]: string } = {
+  low: "bg-green-500",
+  medium: "bg-amber-500",
+  high: "bg-red-500",
+};

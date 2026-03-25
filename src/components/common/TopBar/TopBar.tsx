@@ -18,13 +18,17 @@ export const TopBar = ({ onMenuClick, onSearchClick }: TopBarProps) => {
         </Button>
 
         {/* Title Dynamic */}
-        <div className="text-2xl text-black font-bold">
-          <h1 className="hidden md:block ">Dashboard</h1>
-          <h1 className="block md:hidden">Tasks Tracker</h1>
+        <div className="text-xl md:text-2xl text-black font-bold">
+          <h1 className="hidden md:block">
+            {location.pathname === "/tasks" ? "Tasks" : "Dashboard"}
+          </h1>
+          <h1 className="block md:hidden">
+            {location.pathname === "/tasks" ? "Tasks" : "Tasks Tracker"}
+          </h1>
         </div>
 
         {/* Search and User */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           {location.pathname === "/tasks" && (
             <>
               {/* Search Input Desktop */}
@@ -37,22 +41,27 @@ export const TopBar = ({ onMenuClick, onSearchClick }: TopBarProps) => {
               />
               {/* Search Button Mobile */}
               <div className="block md:hidden">
-                <Button className="w-8 h-8">
-                  <img
-                    src="/ui/search.svg"
-                    alt="search"
-                    onClick={onSearchClick}
-                  />
+                <Button className="w-8 h-8" onClick={onSearchClick}>
+                  <img src="/ui/search.svg" alt="search" />
+                </Button>
+              </div>
+              {/* Filter Button Mobile (mockup has a downward caret or filter icon, using text or simple svg for now) */}
+              <div className="block md:hidden">
+                <Button className="w-8 h-8 flex items-center justify-center">
+                  <span className="text-xl text-slate-600">🔽</span>
                 </Button>
               </div>
             </>
           )}
 
-          {/* Search Mobile */}
-
-          <div className="w-12 h-12">
+          {/* User Profile */}
+          <div className="w-10 h-10 md:w-12 md:h-12 ml-1">
             <a href="#">
-              <img src="/ui/user.svg" alt="user" />
+              <img
+                src="/ui/user.svg"
+                alt="user"
+                className="w-full h-full object-cover"
+              />
             </a>
           </div>
         </div>
