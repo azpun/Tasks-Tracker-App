@@ -45,9 +45,37 @@ const Dashboard = () => {
           </Button>
         </div>
         <div className="flex flex-col gap-2">
-          <TaskCard title="Task 1" status="in progress" priority="low" />
-          <TaskCard title="Task 2" status="to do" priority="medium" />
-          <TaskCard title="Task 3" status="done" priority="high" />
+          <TaskCard
+            title="Finalize project proposal"
+            description="Draft the Q3 marketing strategy presentation."
+            status="to do"
+            priority="high"
+            dueDate="Oct 20"
+          />
+
+          <TaskCard
+            title="Develop mobile UI mockups"
+            description="Create wireframes for Tasks and Dashboard pages."
+            status="in progress"
+            priority="medium"
+            dueDate="Oct 22"
+          />
+
+          <TaskCard
+            title="Team synchronization meeting"
+            description="Review progress and discuss next steps."
+            status="done"
+            priority="low"
+            dueDate="Oct 18"
+          />
+
+          <TaskCard
+            title="Update API Documentation"
+            description="Add endpoints for user authentication."
+            status="overdue"
+            priority="high"
+            dueDate="Oct 15"
+          />
         </div>
       </div>
 
@@ -57,7 +85,13 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold">Upcoming Tasks</h2>
         </div>
         <div className="flex flex-col gap-2">
-          <TaskCard title="Task 1" status="to do" priority="low" />
+          <TaskCard
+            title="Finalize project proposal"
+            description="Draft the Q3 marketing strategy presentation."
+            status="to do"
+            priority="high"
+            dueDate="Oct 20"
+          />
         </div>
       </div>
     </MainLayout>
