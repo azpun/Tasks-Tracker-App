@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Ini adalah repositori untuk mempelajari Next.js yang dibuat menggunakan perintah [`npm create-next-app@latest`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). Proyek ini dikembangkan dengan menggunakan TypeScript dan Tailwind CSS untuk efisiensi pengembangan frontend.
 
-## Fitur Utama
+## Technologi yang Digunakan
 
 - **Next.js**: Framework React untuk pengembangan aplikasi web yang cepat dan efisien
 - **TypeScript**: Bahasa pemrograman yang menambahkan tipe statis ke JavaScript
