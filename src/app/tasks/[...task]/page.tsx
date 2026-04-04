@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type DetailsTaskProps = { params: Promise<{ task: string }> };
+type DetailsTaskProps = { params: Promise<{ task: string[] }> };
 
 async function getDataById(id: string) {
   const exampleTask = [
@@ -17,21 +17,26 @@ async function getDataById(id: string) {
 
 export default async function TaskDetailsPage(props: DetailsTaskProps) {
   const { task: id } = await props.params;
-  const task = await getDataById(id);
+  // const task = await getDataById(id);
 
-  console.log(task);
+  console.log(id);
 
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold">Task Details Page</h1>
-      {task ? (
+      <div className="ml-4">
+        <h2 className="text-lg">Task: {id[1]}</h2>
+        <h3>Category: {id[0]}</h3>
+        <p>Judul: {id[2]}</p>
+      </div>
+      {/* {task ? (
         <div className="ml-4">
           <h2 className="text-lg">Task: {task.title}</h2>
           <p>Deskripsi: {task.description}</p>
         </div>
       ) : (
         <h2 className="ml-4 text-lg">Task not found</h2>
-      )}
+      )} */}
       <Link href="/tasks">
         <button className="ml-4 border p-2 rounded-xl">
           Back to Tasks Page
