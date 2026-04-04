@@ -22,6 +22,11 @@ export default function Navbar() {
             <div className="p-4 hover:bg-gray-500">Profile</div>
           </Link>
         </li>
+        <li>
+          <Link href="/tasks">
+            <div className="p-4 hover:bg-gray-500">Tasks</div>
+          </Link>
+        </li>
       </ul>
       <Link href="/login">
         <h1 className="p-4 hover:bg-gray-500">Login</h1>
